@@ -1,0 +1,145 @@
+﻿<!doctype html>
+<html class="no-js" lang="zxx" xmlns:th="http://www.thymeleaf.org" xmlns:text-align="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>注册页面</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+		
+		<!-- all css here -->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/animate.css">
+        <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="assets/css/chosen.min.css">
+        <link rel="stylesheet" href="assets/css/ionicons.min.css">
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/material-design-iconic-font.min.css">
+        <link rel="stylesheet" href="assets/css/meanmenu.min.css">
+        <link rel="stylesheet" href="assets/css/bundle.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/responsive.css">
+        <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+
+
+            <!-- Add your site or application content here -->
+            
+            <!--organicfood wrapper start--> 
+            <div class="organic_food_wrapper blog_details">
+             	<!--Header start-->
+                <header class="header sticky-header">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="header_wrapper_inner">
+                                   
+                                    <div class="logo col-xs-12">
+                                        <a href="index.html">
+                                            <img src="assets/img/logo/logo.png" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <!--Header end-->
+            </div>
+             <!--organicfood wrapper end-->
+             
+
+           
+            <!--login section start-->
+            <div class="page_login_section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 offset-lg-2">
+                            <p align="center" style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}">
+                            <div class="register_page_form">
+                                <form th:action="@{/userregister}" method="post">
+                                    <div class="row">
+
+                                         <div class="col-lg-6 col-sm-6 col-md-6">
+                                            <div class="input_text">
+												<label for="R_N2">昵称<span>*</span></label>
+												<input id="R_N2" name="nickName" type="text">
+											</div>
+                                        </div>
+                                        
+                                        <div class="col-lg-6 col-sm-6 col-md-6">
+                                            <div class="input_text">
+												<label for="R_N4">电话号码<span>*</span></label>
+												<input id="R_N4" name="phone" type="text">
+											</div>   
+                                        </div>
+
+                                        
+                                        <div class="col-12">
+                                            <div class="input_text">
+                                            	<label for="R_N7">地址<span>*</span></label>
+                                            	<input id="R_N7" name="address" placeholder="收货地址" type="text">
+                                            </div>
+                                        </div> 
+
+
+                                        
+                                        <div class="col-12">
+                                            <div class="input_text">
+												<label for="R_N11">输入密码<span>*</span></label>
+												<input id="R_N11" name="password" type="password">
+											</div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="input_text">
+												<label for="R_N12">确认密码<span>*</span></label>
+												<input id="R_N12" type="password">
+											</div>   
+                                        </div>
+
+                                        <div class="col-12">
+                                            <div class="login_submit">
+                                            	<input value="注册" type="submit">
+                                            </div>
+                                        </div>    
+                                    </div>
+                                </form>    
+                            </div>    
+                        </div>    
+                    </div>    
+                </div>  
+            </div>
+            
+            <!--login section end-->
+           
+            <!--organicfood wrapper start--> 
+            
+           
+           
+           
+           
+           
+           <!--organicfood wrapper end--> 
+            
+    
+            
+  
+		
+		
+		<!-- all js here -->
+        <script src="assets/js/vendor/jquery-1.12.0.min.js"></script>
+        <script src="assets/js/popper.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/isotope.pkgd.min.js"></script>
+        <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+        <script src="assets/js/jquery.counterup.min.js"></script>
+        <script src="assets/js/waypoints.min.js"></script>
+        <script src="assets/js/ajax-mail.js"></script>
+        <script src="assets/js/owl.carousel.min.js"></script>
+        <script src="assets/js/plugins.js"></script>
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>

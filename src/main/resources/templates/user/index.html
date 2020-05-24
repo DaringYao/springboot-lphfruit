@@ -1,0 +1,235 @@
+﻿<!doctype html>
+<html class="no-js" lang="zxx" xmlns:th="http://www.thymeleaf.org" xmlns:text-align="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>水果商城</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+
+    <!-- all css here -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/chosen.min.css">
+    <link rel="stylesheet" href="assets/css/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="assets/css/meanmenu.min.css">
+    <link rel="stylesheet" href="assets/css/bundle.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body>
+
+<!-- Add your site or application content here -->
+
+<!--organicfood wrapper start-->
+<div class="organic_food_wrapper">
+    <!--Header start-->
+    <header class="header sticky-header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="header_wrapper_inner">
+
+                        <div class="logo col-xs-12">
+                            <a href="index.html">
+                                <img src="assets/img/logo/logo.png" alt="">
+                            </a>
+                        </div>
+                        <div class="left">欢迎<span style="color: red" th:text="${session.userphonemsg}"></span>来到水果商城！
+                            <p align="center" style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}">
+                        </div>
+
+                        <div class="main_menu_inner">
+                            <div class="menu">
+                                <nav>
+                                    <ul>
+                                        <li class="active"><a href="index.html">首页</a></li>
+                                        <li><a href="">今日热销</a></li>
+                                        <li><a href="">降价处理</a></li>
+                                        <li><a href="">一周热卖</a></li>
+                                        <li><a href="">水果皇后</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="header_right_info d-flex">
+                            <div class="search_box">
+                                <div class="search_inner">
+                                    <form th:action="@{/}">
+                                        <input type="text" placeholder="搜索你需要的水果">
+                                        <button type="submit"><i class="ion-ios-search"></i></button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="mini__cart">
+                                <div class="mini_cart_inner">
+                                    <div class="cart_icon">
+                                        <a th:href="@{/}">购物车</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--Header end-->
+
+    <!--Slider start-->
+    <div class="slider_area">
+        <div class="slider_list  owl-carousel">
+            <div class="single_slide" style="background-image: url(assets/img/slider/1.jpg);">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="slider__content">
+                                <p>欢迎来到水果商城</p>
+                                <h2>健康 <strong> 生活 </strong> 每一天 </h2>
+                                <h3>记得 <strong>按时</strong> 吃饭哦</h3>
+                                <h6>今日西瓜<strong>特价</strong><span>3块钱！</span></h6>
+                                <div class="slider_btn">
+                                    <a href="shop.html">买我！</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single_slide" style="background-image: url(assets/img/slider/2.jpg);">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="slider__content">
+                                <p>欢迎来到水果商城</p>
+                                <h2>每天 <strong>吃一个</strong> 苹果</h2>
+                                <h3> 疾病 <strong> 远离我 </strong></h3>
+                                <h6>今日苹果<strong>特价</strong> <span>5块钱！</span></h6>
+                                <div class="slider_btn">
+                                    <a href="shop.html">我要这个！</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Slider end-->
+    <h1 style="color: purple">周边商家</h1><br/>
+    <table class="table">
+        <!--<caption>上下文表格布局</caption>-->
+        <thead>
+        <tr>
+            <th>商店名</th>
+            <th>距离</th>
+            <th>超市电话</th>
+            <th>进入该商店</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="active" th:each="diss : ${distance}">
+            <td th:text="${diss.getUserName()}"></td>
+            <td th:text="${diss.getAddress()}"></td>
+            <td th:text="${diss.getPhone()}"></td>
+            <td><a th:href="@{'/zhuan/'+${diss.getPhone()}}">进入</a></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <!--Banner area start-->
+    <h1 style="color: purple">今日推荐</h1><br/>
+    <div class="banner_area home1_banner mt-30">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_banner">
+                        <a href="#">
+                            <img src="assets/img/banner/1.jpg" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_banner">
+                        <a href="#">
+                            <img src="assets/img/banner/2.jpg" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_banner banner_three">
+                        <a href="#">
+                            <img src="assets/img/banner/3.jpg" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Banner area end-->
+    <!--Features product area-->
+
+    <div class="features_product pt-90">
+        <div class="container-fluid">
+            <div class="row">
+                <h1 style="color: purple">随便逛逛</h1><br/>
+                <div class="features_product_active owl-carousel">
+                    <!--00000000000000000000-->
+                    <div class="col-lg-2"  th:each="goods : ${shopgoods}">
+                        <div class="single__product">
+                            <div class="single_product__inner">
+                                <div class="product_img">
+
+                                        <img th:src="${goods.getG_imgurl()}" th:alt="${goods.getS_userName()}">
+
+                                </div>
+                                <div class="product__content text-center">
+                                    <div class="produc_desc_info">
+                                        <div class="product_title">
+                                            <h4><p th:text="${goods.getG_name()}"></p></h4>
+                                        </div>
+                                        <div class="product_price">
+                                            <span th:text="${goods.getG_price()}"></span>
+                                        </div>
+                                    </div>
+                                    <div class="product__hover">
+                                        <ul>
+                                            <li><a th:href="@{'/addCart/'+${goods.getId()}}"><i class="ion-android-cart"></i></a></li>
+                                            <li><a th:href="@{'/product/'+${goods.getId()}}" ><i class="ion-clipboard"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--00000000000000000-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+<!-- all js here -->
+<script src="assets/js/vendor/jquery-1.12.0.min.js"></script>
+<script src="assets/js/popper.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/jquery.meanmenu.min.js"></script>
+<script src="assets/js/isotope.pkgd.min.js"></script>
+<script src="assets/js/imagesloaded.pkgd.min.js"></script>
+<script src="assets/js/jquery.counterup.min.js"></script>
+<script src="assets/js/waypoints.min.js"></script>
+<script src="assets/js/ajax-mail.js"></script>
+<script src="assets/js/owl.carousel.min.js"></script>
+<script src="assets/js/plugins.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

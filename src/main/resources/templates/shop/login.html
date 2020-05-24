@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:text-align="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
+    <!-- Google Chrome Frame也可以让IE用上Chrome的引擎: -->
+    <meta name="renderer" content="webkit">
+    <!--国产浏览器高速模式-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 定义页面的最新版本 -->
+    <meta name="description" content="网站简介"/>
+    <!-- 网站简介 -->
+    <meta name="keywords" content="搜索关键字，以半角英文逗号隔开"/>
+    <title>水果超市</title>
+
+    <link rel="stylesheet" type="text/css" href="shop/css/base.css">
+    <link rel="stylesheet" type="text/css" href="shop/css/login.css">
+    <script type="text/javascript" src="shop/framework/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+<p align="center" style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}">
+<form th:action="@{/superlogin}" method="post">
+    <div class="login_main">
+        <div class="login_title">
+			水果超市--超市登录
+        </div>
+        <div class="login_account">
+            <input type="text" name="phone" placeholder="请输入手机号"/>
+        </div>
+        <div class="login_password">
+            <input type="password" name="password" placeholder="密码（8-20位，区分大小写）"/>
+        </div>
+        <div class="login_submit">
+            <input type="submit"  value="登录"/>
+        </div>
+
+    </div>
+</form>
+<div class="login_register">
+    <a th:href="@{/shoplogintoregister}" target="_blank">没有账号，免费注册</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+﻿<!doctype html>
+<html class="no-js" lang="zxx" xmlns:th="http://www.thymeleaf.org" xmlns:text-align="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>登录界面</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+		
+		<!-- all css here -->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/animate.css">
+        <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="assets/css/chosen.min.css">
+        <link rel="stylesheet" href="assets/css/ionicons.min.css">
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/material-design-iconic-font.min.css">
+        <link rel="stylesheet" href="assets/css/meanmenu.min.css">
+        <link rel="stylesheet" href="assets/css/bundle.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/responsive.css">
+        <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+
+
+            <!-- Add your site or application content here -->
+
+              <!--organicfood wrapper start-->
+            <div class="organic_food_wrapper blog_details">
+                <!--Header start-->
+                <header class="header">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="header_wrapper_inner">
+
+                                    <div class="logo col-xs-12">
+                                        <a href="index.html">
+                                            <img src="assets/img/logo/logo.png" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <!--Header end-->
+            </div>
+             <!--organicfood wrapper end-->
+
+            <!--breadcrumb area start-->
+
+             <!--breadcrumb area end-->
+            
+             
+           
+            <!--login section start-->
+            <div class="page_login_section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-10 offset-sm-1">
+                            <p align="center" style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}">
+                            <div class="login_page_form">
+                                <form th:action="@{/userLogin}" method="post">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="input_text">
+                                            	<label for="phone">电话号码<span>*</span></label>
+                                            	<input id="phone" name="phone" type="text">
+                                            </div>
+                                        </div>
+                                         <div class="col-12">
+                                            <div class="input_text">
+												<label for="password">密码<span>*</span></label>
+												<input id="password" name="password" type="password">
+											</div>   
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="login_submit">
+                                            	<input class="inline" value="登录" name="Login" type="submit">
+                                            </div> 
+                                        </div>      
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        还没有账号？<a th:href="@{/userLoginToRegister}" style="color: red">注册</a>
+                    </div>    
+                </div>  
+            </div>
+            
+            <!--login section end-->
+           
+            <!--organicfood wrapper start--> 
+            
+		
+		<!-- all js here -->
+        <script src="assets/js/vendor/jquery-1.12.0.min.js"></script>
+        <script src="assets/js/popper.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/isotope.pkgd.min.js"></script>
+        <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+        <script src="assets/js/jquery.counterup.min.js"></script>
+        <script src="assets/js/waypoints.min.js"></script>
+        <script src="assets/js/ajax-mail.js"></script>
+        <script src="assets/js/owl.carousel.min.js"></script>
+        <script src="assets/js/plugins.js"></script>
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
