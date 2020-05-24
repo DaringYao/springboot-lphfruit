@@ -28,7 +28,7 @@ public class UploadUtil {
         System.out.println("后缀名为：" + suffixName);
         //文件上传的路径
         String filePath = "D:\\springboot-lphfruit\\src\\main\\resources\\static\\image\\";
-        String fileRelativePath = "static/image/";
+        String fileRelativePath = "image/";
         //解决中文问题可以加uuid
         fileNameOne = UUID.randomUUID() + suffixName;
         File files = new File(filePath + fileNameOne);

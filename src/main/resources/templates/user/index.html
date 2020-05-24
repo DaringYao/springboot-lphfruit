@@ -70,7 +70,7 @@
                             <div class="mini__cart">
                                 <div class="mini_cart_inner">
                                     <div class="cart_icon">
-                                        <a th:href="@{/}">购物车</a>
+                                        <a th:href="@{/turnCart}">购物车</a>
                                     </div>
                                 </div>
                             </div>
@@ -181,12 +181,12 @@
                 <h1 style="color: purple">随便逛逛</h1><br/>
                 <div class="features_product_active owl-carousel">
                     <!--00000000000000000000-->
-                    <div class="col-lg-2"  th:each="goods : ${shopgoods}">
+                    <div class="col-lg-2" th:each="goods : ${shopgoods}">
                         <div class="single__product">
                             <div class="single_product__inner">
                                 <div class="product_img">
-
-                                        <img th:src="${goods.getG_imgurl()}" th:alt="${goods.getS_userName()}">
+                                    <input id="dingweiid" name="dingweiid" type="hidden" th:value="${goods.getId()}"/>
+                                    <img th:src="${goods.getG_imgurl()}" th:alt="${goods.getS_userName()}">
 
                                 </div>
                                 <div class="product__content text-center">
@@ -200,8 +200,11 @@
                                     </div>
                                     <div class="product__hover">
                                         <ul>
-                                            <li><a th:href="@{'/addCart/'+${goods.getId()}}"><i class="ion-android-cart"></i></a></li>
-                                            <li><a th:href="@{'/product/'+${goods.getId()}}" ><i class="ion-clipboard"></i></a></li>
+                                            <li><a th:onclick="'javascript:addCart('+${goods.getId()}+')' "><i class="ion-android-cart"></i></a></li>
+                                            <li>
+                                                <button th:href="@{'/product/'+${goods.getId()}}"><i
+                                                        class="ion-clipboard"></i></button>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -213,9 +216,31 @@
             </div>
         </div>
     </div>
-
-
 </div>
+<script type="text/javascript">
+    function addCart(id) {
+        // var id = $('#dingweiid').val();
+        alert(id);
+        $.ajax({
+            type: "get",//数据发送的制方百式（post 或者 get）
+            url: "/aaddCart",//要发送的后台地址
+            data: {id: id},//要发送的数据（参数）格式为{'val1':"1","val2":"2"}
+            dataType: "json",//后台处理后返回的数据格式
+            success: function (data) {//ajax请求成功后触发的方法
+                if (data == 1) {
+                    alert('添加成功');
+                } else {
+                    alert('添加失败！')
+                }
+            },
+            error: function (msg) {//ajax请求失败后触发的方法
+                alert(msg);//弹出错误信息度
+            }
+        });
+
+        // get();//此处为上传文件的进度条
+    }
+</script>
 
 
 <!-- all js here -->

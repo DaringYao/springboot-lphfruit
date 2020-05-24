@@ -12,9 +12,7 @@ import com.lph.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
@@ -40,6 +38,14 @@ public class UserController {
     @Autowired
     private CartMapper cartMapper;
 
+    /**
+     * 接收logincontroller重定向请求
+     *
+     * @param session
+     * @param model
+     * @return
+     * @throws IOException
+     */
     @RequestMapping("/userindex")
     public String dnsjv(HttpSession session, Model model) throws IOException {
         String userphonemsg = (String) session.getAttribute("userphonemsg");
@@ -65,9 +71,17 @@ public class UserController {
         return "user/index";
     }
 
-    @RequestMapping("/addCart/{id}")
-    public String ncsjhdv(Model model, HttpSession session,
-                          @PathVariable("id") Integer id) {
+    /**
+     * 加入购物车
+     *
+     * @param id
+     * @param session
+     * @return
+     */
+    @RequestMapping("/aaddCart")
+    @ResponseBody
+    public int aaddCart(@RequestParam("id") Integer id, HttpSession session) {
+//        int i1 = Integer.parseInt(id);
         String userphonemsg = (String) session.getAttribute("userphonemsg");
         System.out.println(id);
         System.out.println(userphonemsg);
@@ -75,12 +89,14 @@ public class UserController {
         cart.setG_id(id);
         cart.setU_phone(userphonemsg);
         int i = cartMapper.insert(cart);
-        if (i == 1) {
-            model.addAttribute("msg", "添加成功！");
-            return "success";
-        } else {
-            return "success";
-        }
+        return i;
+    }
+
+    @RequestMapping("/turnCart")
+    public String turnCart(HttpSession session, Model model) {
+        String userphonemsg = (String) session.getAttribute("userphonemsg");
+
+        return "user/cart";
     }
 }
 

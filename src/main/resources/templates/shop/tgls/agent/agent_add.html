@@ -80,7 +80,7 @@
 			<!-- 三级省市 插件 -->
     		<script src="shop/framework/area.js"></script>
 			<script src="shop/framework/province.js"></script>
-			<script >
+			<script>
                 function upload(){
                     var form = new FormData(document.getElementById("addForm"));
 //             var req = new XMLHttpRequest();
@@ -93,7 +93,7 @@
                         processData:false,
                         contentType:false,
                         success:function(data){
-                            if (data == 0) {
+                            if (data == 1) {
                                 alert("上传成功")
 							}else{
                                 alert("上传失败")
