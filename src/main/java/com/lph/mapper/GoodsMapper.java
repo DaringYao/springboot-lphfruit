@@ -20,6 +20,12 @@ import java.util.List;
 @Mapper
 @Repository
 public interface GoodsMapper {
+    @Select("select * from goods where id=#{id}")
+    List<Goods> queryGoodsListByG_id(Integer id);
+
+    @Select("select * from goods where id=#{id}")
+    Goods queryGoodsById(Integer id);
+
     @Select("select * from goods")
     List<Goods> queryGoodsList();
 

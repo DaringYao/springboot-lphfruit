@@ -63,7 +63,7 @@ public class LoginController {
             }
         }
         model.addAttribute("msg", "请输入正确的电话号码或密码");
-        return "login";
+        return "user/login";
     }
 
     /**

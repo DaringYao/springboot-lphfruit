@@ -2,6 +2,7 @@ package com.lph.pojo;
 
 
 import java.io.Serializable;
+import java.util.List;
 
 
 /**
@@ -28,6 +29,16 @@ public class Goods implements Serializable {
     private String g_price;
 
     private String g_class;
+    
+    List<Goods> list;
+
+    public List<Goods> getList() {
+        return list;
+    }
+
+    public void setList(List<Goods> list) {
+        this.list = list;
+    }
 
     public Goods() {
     }

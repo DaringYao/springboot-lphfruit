@@ -1,5 +1,5 @@
 ﻿<!doctype html>
-<html class="no-js" lang="zxx" xmlns:th="http://www.thymeleaf.org" xmlns:text-align="http://www.w3.org/1999/xhtml">
+<html class="no-js" lang="zxx" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -10,17 +10,17 @@
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
 
     <!-- all css here -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/css/chosen.min.css">
-    <link rel="stylesheet" href="assets/css/ionicons.min.css">
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/material-design-iconic-font.min.css">
-    <link rel="stylesheet" href="assets/css/meanmenu.min.css">
-    <link rel="stylesheet" href="assets/css/bundle.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/css/animate.css">
+    <link rel="stylesheet" href="../../assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../../assets/css/chosen.min.css">
+    <link rel="stylesheet" href="../../assets/css/ionicons.min.css">
+    <link rel="stylesheet" href="../../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../assets/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="../../assets/css/meanmenu.min.css">
+    <link rel="stylesheet" href="../../assets/css/bundle.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
     <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body>
@@ -42,7 +42,7 @@
                             </a>
                         </div>
                         <div class="left">欢迎<span style="color: red" th:text="${session.userphonemsg}"></span>来到水果商城！
-                            <p align="center" style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}">
+                            <!--<p align="center" style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}">-->
                         </div>
 
                         <div class="main_menu_inner">
@@ -202,8 +202,8 @@
                                         <ul>
                                             <li><a th:onclick="'javascript:addCart('+${goods.getId()}+')' "><i class="ion-android-cart"></i></a></li>
                                             <li>
-                                                <button th:href="@{'/product/'+${goods.getId()}}"><i
-                                                        class="ion-clipboard"></i></button>
+                                                <a th:href="@{'/turnProductDetail'}"><i class="ion-clipboard"></i></a>
+                                               <!--/'+${goods.getId()}-->
                                             </li>
                                         </ul>
                                     </div>

@@ -95,8 +95,38 @@ public class UserController {
     @RequestMapping("/turnCart")
     public String turnCart(HttpSession session, Model model) {
         String userphonemsg = (String) session.getAttribute("userphonemsg");
+        List<Cart> sessionUserCarts = cartMapper.queryCartListByU_phone(userphonemsg);
+        List<Goods> list = new ArrayList<Goods>();
+        for (Cart c : sessionUserCarts) {
+            Integer g_id = c.getG_id();
+            List<Goods> goods = goodsMapper.queryGoodsListByG_id(g_id);
+            for (Goods g : goods) {
+                List<Goods> list2 = goodsMapper.queryGoodsByShopPhone(g.getS_userName());
+                for (Goods goods1 :list2) {
+                    Goods goods2 = new Goods();
+                    goods2.setS_userName(goods1.getS_userName());
 
+                    List<Goods> list1 = new ArrayList<>();
+                    Goods goods3 = new Goods();
+                    goods3.setG_imgurl(g.getG_imgurl());
+                    goods3.setG_price(g.getG_price());
+                    goods3.setG_name(g.getG_name());
+                    list1.add(goods3);
+
+                    goods2.setList(list1);
+
+                    list.add(goods2);
+                }
+                model.addAttribute("classGoods",list);
+            }
+        }
         return "user/cart";
+    }
+    @RequestMapping("/turnProductDetail")//*/{id}*/@PathVariable("id") Integer id,
+    public String turnProductDetail(HttpSession session, Model model) {
+       /* Goods goods = goodsMapper.queryGoodsById(id);
+        model.addAttribute("goodss",goods);*/
+        return "user/product-details";
     }
 }
 
