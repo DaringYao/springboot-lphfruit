@@ -148,47 +148,22 @@
                                                 <th class="img-thumbnail">图片</th>
                                                 <th class="product-name">水果名</th>
                                                  <th class="product-price">价格</th>
-                                                <th class="product-quantity">数量</th>
-                                                <th class="product-subtotal">总价</th>
+                                                <th class="product-quantity">商家</th>
+                                                <!--<th class="product-subtotal">商家</th>-->
                                                 <th class="product-remove">移出购物车</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td class="product-thumbnail"><img src="assets/img/product/3.jpg" alt=""></td>
-                                                <td class="product-name"><a href="#">橙子</a></td>
-                                                <td class="product-price"><span class="amount">7块钱</span></td>
-                                                <td class="product-quantity">
-                                                    <div class="quickview_plus_minus quick_cart">
-                                                        <div class="quickview_plus_minus_inner">
-                                                            <div class="cart-plus-minus cart_page">
-                                                                <input type="text" value="02" name="qtybutton" class="cart-plus-minus-box">
-                                                            </div>
-                                                        </div>    
-                                                    </div> 
-                                                </td>
-                                                <td class="product-subtotal">14块钱</td>
+                                            <tr th:each="list : ${lists}">
+                                                <td class="product-thumbnail"><img th:src="${list.getG_imgurl()}" alt=""></td>
+                                                <td class="product-name"><span th:text="${list.getG_name()}">橙子</span></td>
+                                                <td class="product-price"><span class="amount" th:text="${list.getG_price()}"></span></td>
+                                                <td class="product-quantity"><span class="amount" th:text="${list.getS_userName()}"></span></td>
+                                                <!--<td class="product-subtotal">14块钱</td>-->
                                                 <td class="product-remove"><a href="#">X</a></td>
                                             </tr>
                                         </tbody>
-                                        <tbody>
-                                            <tr>
-                                                <td class="product-thumbnail"><img src="assets/img/product/4.jpg" alt=""></td>
-                                                <td class="product-name"><a href="#">葡萄</a></td>
-                                                <td class="product-price"><span class="amount">13块钱</span></td>
-                                                <td class="product-quantity">
-                                                    <div class="quickview_plus_minus quick_cart">
-                                                        <div class="quickview_plus_minus_inner">
-                                                            <div class="cart-plus-minus cart_page">
-                                                                <input type="text" value="02" name="qtybutton" class="cart-plus-minus-box">
-                                                            </div>
-                                                        </div>    
-                                                    </div> 
-                                                </td>
-                                                <td class="product-subtotal">26块钱</td>
-                                                <td class="product-remove"><a href="#">X</a></td>
-                                            </tr>
-                                        </tbody>
+
                                     </table>
                                 </div>
                                 <div class="row table-responsive_bottom">
