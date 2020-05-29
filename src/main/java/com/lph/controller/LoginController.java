@@ -106,7 +106,7 @@ public class LoginController {
             System.out.println(i);
             if (i==1) {
                 model.addAttribute("msg", "注册成功，请登录");
-                return "user/login";
+                return "forward:/login";
             }
         } catch (Exception e) {
             e.printStackTrace();

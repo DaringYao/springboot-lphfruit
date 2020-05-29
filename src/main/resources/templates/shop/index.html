@@ -59,8 +59,6 @@
                     <ul class="menu2">
                         <li class="menuli2"><a class="menua2" href="javascript:menu_ajax('/agent', '订单管理,订单列表')"><i
                                 class="menua2_ico"><span></span></i>订单列表</a></li>
-                        <li class="menuli2"><a class="menua2" href="javascript:menu_ajax('/agentadd', '订单管理,订单分管')"><i
-                                class="menua2_ico"><span></span></i>订单分管</a></li>
                     </ul>
                 </li>
                 <li class="menuli1">
@@ -74,39 +72,6 @@
                                 class="menua2_ico"><span></span></i>添加商品</a></li>
                     </ul>
                 </li>
-                <li class="menuli1">
-                    <a class="menua1" href="javascript:menu_ajax('tgls/control_library.html', '控件库')"><i class="iconfont left">&#xe711;</i>
-                        <p>控件库</p></a>
-                </li>
-                <li class="menuli1">
-                    <a class="menua1" href="javascript:menu_ajax('tgls/customer_card.html', '任务卡片管理')"><i class="iconfont left">&#xe66b;</i>
-                        <p>任务卡片管理</p></a>
-                </li>
-                <li class="menuli1">
-                    <a class="menua1" href="javascript:menu_ajax('tgls/mainline_logic.html', '主线逻辑管理')"><i class="iconfont left">&#xe633;</i>
-                        <p>主线逻辑管理</p></a>
-                </li>
-                <li class="menuli1">
-                    <a class="menua1" href="javascript:void(0)"><i class="iconfont left">&#xe6da;</i>
-                        <p>项目管理卡片</p><i
-                                class="iconfont right">&#xe608;</i></a>
-                    <ul class="menu2">
-                        <li class="menuli2"><a class="menua2" href="javascript:menu_ajax('tgls/customer_card.html', '项目管理卡片,二类卡片')"><i
-                                class="menua2_ico"><span></span></i>二类卡片</a></li>
-                    </ul>
-                </li>
-                <li class="menuli1">
-                    <a class="menua1" href="javascript:menu_ajax('tgls/customer_card.html', '用户和权限管理')"><i class="iconfont left">&#xe659;</i>
-                        <p>用户和权限管理</p></a>
-                </li>
-                <li class="menuli1">
-                    <a class="menua1" href="javascript:menu_ajax('tgls/customer_card.html', '用户和权限管理')"><i class="iconfont left">&#xe60d;</i>
-                        <p>统计报表</p></a>
-                </li>
-                <li class="menuli1">
-                    <a class="menua1" href="javascript:menu_ajax('tgls/customer_card.html', '用户和权限管理')"><i class="iconfont left">&#xe607;</i>
-                        <p>知识管理</p></a>
-                </li>
             </ul>
         </div>
     </div>
@@ -114,7 +79,7 @@
     <div class="main_body">
         <div class="main_body_title"><font>后台主页</font></div>
         <div class="main_body_con">
-        	<iframe id="mainIframe" src="tgls/index.html" scrolling="no"></iframe>
+            <iframe id="mainIframe" src="tgls/index.html" scrolling="no"></iframe>
         </div>
     </div>
 
@@ -127,22 +92,22 @@
 
 <script>
     $(".menu").mCustomScrollbar({
-        scrollButtons:{
-            enable:false,
-            scrollType:"continuous",
-            scrollSpeed:20,
-            scrollAmount:40
+        scrollButtons: {
+            enable: false,
+            scrollType: "continuous",
+            scrollSpeed: 20,
+            scrollAmount: 40
         },
-        horizontalScroll:false
+        horizontalScroll: false
     });
     $(".main_body_con").mCustomScrollbar({
-        scrollButtons:{
-            enable:false,
-            scrollType:"continuous",
-            scrollSpeed:20,
-            scrollAmount:40
+        scrollButtons: {
+            enable: false,
+            scrollType: "continuous",
+            scrollSpeed: 20,
+            scrollAmount: 40
         },
-        horizontalScroll:false
+        horizontalScroll: false
     });
 </script>
 </body>

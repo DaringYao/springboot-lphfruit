@@ -89,4 +89,8 @@ public class ShopController {
        return "shop/tgls/agent/agent_list";
     }
 
+    @RequestMapping("/agent")
+    public String goodsOrder(){
+        return "shop/tgls/goodsManage/goods_list";
+    }
 }

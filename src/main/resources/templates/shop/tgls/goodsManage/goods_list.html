@@ -41,127 +41,43 @@
 
 	<body>
 		<div class="cBody">
-			<div class="console">
-				<form class="layui-form" action="">
-					<div class="layui-form-item">
-						<div class="layui-input-inline">
-							<input type="text" name="name" required lay-verify="required" placeholder="输入商品名称" autocomplete="off" class="layui-input">
-						</div>
-						<div class="layui-input-inline">
-		                    <select name="provid" id="provid" lay-filter="provid">
-		                        <option value="">一级分类</option>
-		                    </select>
-		                </div>
-		                <div class="layui-input-inline">
-		                    <select name="cityid" id="cityid" lay-filter="cityid">
-		                        <option value="">二级分类</option>
-		                    </select>
-		                </div>
-						<button class="layui-btn" lay-submit lay-filter="formDemo">检索</button>
-						<a class="layui-btn">导入商品</a>
-					</div>
-				</form>
-
-				<script>
-					layui.use('form', function() {
-						var form = layui.form;
-				
-						//监听提交
-						form.on('submit(formDemo)', function(data) {
-							layer.msg(JSON.stringify(data.field));
-							return false;
-						});
-					});
-				</script>
-			</div>
-			
 			<table class="layui-table">
 				<thead>
 					<tr>
 						<th>商品名称</th>
-						<th>商品图片</th>
-						<th>参考价格</th>
-						<th>商品单位</th>
-						<th>一级分类</th>
-						<th>二级分类</th>
-						<th>操作</th>
+						<th>购买客户</th>
+						<th>客户电话</th>
+						<th>客户地址</th>
+						<th>购买数量</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
 						<td>冬瓜</td>
-						<td><img src="http://images.yixinorth.com/sp/2017/201712051125530096.jpg" width="20" height="20" onmouseenter="imgBig(this)" onmouseleave="imgSmall(this)"/></td>
-						<td>10</td>
-						<td>斤</td>
-						<td>新鲜蔬菜</td>
-						<td>茄果类</td>
-						<td>
-							<button class="layui-btn layui-btn-xs" onclick="updateBut()">修改</button>
-						</td>
+						<td>澜阙</td>
+						<td>13843819438</td>
+						<td>北京市海淀区</td>
+						<td>3斤</td>
 					</tr>
 					<tr>
-						<td>冬瓜</td>
-						<td><img src="http://images.yixinorth.com/sp/2017/201712051252040212.jpg" width="20" height="20" onmouseenter="imgBig(this)" onmouseleave="imgSmall(this)"/></td>
-						<td>10</td>
-						<td>斤</td>
-						<td>新鲜蔬菜</td>
-						<td>茄果类</td>
-						<td>
-							<button class="layui-btn layui-btn-xs" onclick="updateBut()">修改</button>
-						</td>
+						<td>葡萄</td>
+						<td>红月</td>
+						<td>12332112333</td>
+						<td>北京市昌平区</td>
+						<td>5斤</td>
+
 					</tr>
 					<tr>
-						<td>冬瓜</td>
-						<td><img src="http://images.yixinorth.com/sp/2017/201712051259070675._SL500_AA300_.jpg" width="20" height="20" onmouseenter="imgBig(this)" onmouseleave="imgSmall(this)"/></td>
-						<td>10</td>
-						<td>斤</td>
-						<td>新鲜蔬菜</td>
-						<td>茄果类</td>
-						<td>
-							<button class="layui-btn layui-btn-xs" onclick="updateBut()">修改</button>
-						</td>
+						<td>杏子</td>
+						<td>北瘾</td>
+						<td>1781934673</td>
+						<td>北京市朝阳区</td>
+						<td>3斤</td>
+
+
 					</tr>
 				</tbody>
 			</table>
-			
-			<!-- layUI 分页模块 -->
-			<div id="pages"></div>
-			<script>
-				layui.use('laypage', function() {
-					var laypage = layui.laypage;
-				
-					//总页数大于页码总数
-					laypage.render({
-					    elem: 'pages'
-					    ,count: 100
-					    ,layout: ['count', 'prev', 'page', 'next', 'limit', 'skip']
-					    ,jump: function(obj){
-					      console.log(obj)
-					    }
-					});
-				});
-				//修改按钮
-				function updateBut(){
-					layui.use('layer', function() {
-						var layer = layui.layer;
-							
-						//iframe层-父子操作
-						layer.open({
-							type: 2,
-							area: ['70%', '60%'],
-							fixed: false, //不固定
-							maxmin: true,
-							content: 'goods_update.html'
-						});
-					});
-					
-				}
-				//解决框架的问题"overflow","hidden"
-				var setCBodyOverflowINDEX = 0; 
-				function setCBodyOverflow(layero, index, layer){
-				    console.log(index)
-				}
-			</script>
 		</div>
 	</body>
 
